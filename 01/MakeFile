@@ -1,0 +1,2 @@
+OBJECTS = divi.c add.c sub.c mul.c
+
