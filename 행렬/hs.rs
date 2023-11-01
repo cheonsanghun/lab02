@@ -13,12 +13,19 @@ fn main() {
 
     let mut matrix1: Vec<Vec<i32>> = vec![vec![0; cols1]; rows1];
     println!("첫 번째 행렬의 원소를 입력하세요:");
+
     for i in 0..rows1 {
         for j in 0..cols1 {
-            input.clear();
-            io::stdin().read_line(&mut input).expect("입력 에러");
-            let element: i32 = input.trim().parse().expect("잘못된 입력");
-            matrix1[i][j] = element;
+            loop {
+                input.clear();
+                io::stdin().read_line(&mut input).expect("입력 에러");
+                if let Ok(element) = input.trim().parse() {
+                    matrix1[i][j] = element;
+                    break;
+                } else {
+                    println!("잘못된 입력입니다. 다시 시도하세요.");
+                }
+            }
         }
     }
 
@@ -34,12 +41,19 @@ fn main() {
 
     let mut matrix2: Vec<Vec<i32>> = vec![vec![0; cols2]; rows2];
     println!("두 번째 행렬의 원소를 입력하세요:");
+
     for i in 0..rows2 {
         for j in 0..cols2 {
-            input.clear();
-            io::stdin().read_line(&mut input).expect("입력 에러");
-            let element: i32 = input.trim().parse().expect("잘못된 입력");
-            matrix2[i][j] = element;
+            loop {
+                input.clear();
+                io::stdin().read_line(&mut input).expect("입력 에러");
+                if let Ok(element) = input.trim().parse() {
+                    matrix2[i][j] = element;
+                    break;
+                } else {
+                    println!("잘못된 입력입니다. 다시 시도하세요.");
+                }
+            }
         }
     }
 
@@ -59,4 +73,3 @@ fn main() {
         println!();
     }
 }
-
