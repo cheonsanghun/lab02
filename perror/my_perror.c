@@ -7,8 +7,8 @@ void my_perror(const char *prefix) {
     if (prefix != NULL) {
         fprintf(stderr, "%s: ", prefix);
     }
-
-    perror(NULL);
+    
+    fprintf(stderr, "%s\n), strerror(errno));
 }
 
 int main(int argc, char *argv[]) {
